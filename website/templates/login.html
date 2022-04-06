@@ -1,0 +1,25 @@
+{% extends "log_base.html" %}
+{% block title %}Sign In | Warehouse Management{% endblock %}
+
+{% block content %}
+
+    <div class="col-4">
+    <h3 align="center">Login</h3>
+    <form method="POST">
+
+        <div class="mb-3">
+            <label for="InputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="InputEmail" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="InputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="InputPassword1" name="password">
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </div>
+
+    </form>
+   </div>
+
+{% endblock %}
