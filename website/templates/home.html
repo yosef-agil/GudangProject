@@ -2,8 +2,18 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
+<div class="dashboard-section">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+          <!-- <li class="breadcrumb-item"><a href="#">Library</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="#">Data</a></li> -->
+        </ol>
+    </nav>
     <div class="card-content">
         <div class="row row-cols-1 row-cols-md-4 g-4">
+
+          <!-- Card for total product on each category -->
             <div class="col">
               <div class="card h-100 py-3 px-4">
                 <div class="card-body">
@@ -15,54 +25,78 @@
             <div class="col">
                 <div class="card h-100 py-3 px-4">
                   <div class="card-body">
-                    <h6 class="card-title">Total Product</h6>
-                    <h2 class="card-text">402</h2>
+                    <h6 class="card-title">Elektronik</h6>
+                    <h2 class="card-text">0</h2>
                   </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100 py-3 px-4">
                   <div class="card-body">
-                    <h6 class="card-title">Total Product</h6>
-                    <h2 class="card-text">402</h2>
+                    <h6 class="card-title">Aksesories</h6>
+                    <h2 class="card-text">0</h2>
                   </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100 py-3 px-4">
                   <div class="card-body">
-                    <h6 class="card-title">Total Product</h6>
-                    <h2 class="card-text">402</h2>
+                    <h6 class="card-title">Smartphone</h6>
+                    <h2 class="card-text">0</h2>
                   </div>
                 </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <!-- test git -->
+    <br>
+    <div class="container">
+        <div class="table-bar">
+            <div class="col-md-6">
+                <h3>Data Barang</h3>
             </div>
         </div>
     </div>
 
-    <!-- test git -->
-    <br>
-    <h3>Data Barang</h3>
-
     <div class="data-product">
         <table class="table table-hover">
-            <thead>
+
               <tr>
-                <th scope="col">ID Product</th>
+                <th scope="col">ID</th>
                 <th scope="col">Product Name</th>
-                <th scope="col">Type of Product</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Date</th>
                 <th scope="col">Qty Product</th>
-                <th scope="col">Date In</th>
+                <th scope="col">Action</th>
               </tr>
-            </thead>
-            <tbody>
               <tr>
-                <td>21552</td>
-                <td>Nivea Men</td>
-                <td>Cosmetic</td>
-                <td>41</td>
-                <td>March 05, 2022</td>
+                {% for row in value %}
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                        </svg>
+                    </button>
+                </td>
               </tr>
-            </tbody>
+              {% endfor %}
+
         </table>
     </div>
 

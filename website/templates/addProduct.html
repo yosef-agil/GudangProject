@@ -2,6 +2,46 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-    <h2>Add new product</h2>
+    <div class="dashboard-section">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+            <li class="breadcrumb-item aktif"><a href="/addProduct">Add Procut</a></li>
+            </ol>
+        </nav>
+        <h4>Input new data</h4>
+    </div>
+    <div class="input-data data-product card">
+        <form action="POST">
+            <div class="mb-3">
+                <label for="product" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="product" name="product">
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Product Category</label>
+                <select class="form-select form-select-md" aria-label="Default select example" name="jenisBarang" id="category" name="category">
+                    <option value="Elektronik">Elektronik</option>
+                    <option value="Cosmetic">Handphone & aksesories</option>
+                    <option value="Dekorasi Rumah">Dokumen</option>
+                    <option value="Mainan & Hiburan">Mainan & Hiburan</option>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Peralatan Dapur">Peralatan Dapur</option>
+                    <option value="Dekorasi Rumah">Dekorasi rumah</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Product Price</label>
+                <div class="input-group">
+                    <span class="input-group-text">Rp</span>
+                    <input type="text" class="form-control" aria-label="unit price">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+            <div class="md-3">
+                <label for="qty" class="form-label">Quantity</label>
+                <input type="text" class="form-control" id="qty" name="qty">
+            </div>
+        </form>
+    </div>
 
 {% endblock %}

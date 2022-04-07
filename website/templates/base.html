@@ -34,7 +34,23 @@
             font-weight: 300;
             color: rgb(166, 166, 166);
         }
-
+        .dashboard-section{
+            margin-top: 40px;
+        }
+        .breadcrumb{
+            margin-bottom: 40px;
+        }
+        .breadcrumb a{
+            color: rgb(166, 166, 166);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover{
+            color: #75CB79;
+            text-decoration: underline;
+        }
+        .aktif a{
+            color: #75CB79;
+        }
         .card{
             border-radius: 15px;
         }
@@ -60,6 +76,23 @@
             border-radius: 12px;
             background-color: white;
         }
+
+        th{
+            font-size: 14px;
+            font-weight: 400;
+            color: rgb(166, 166, 166);
+        }
+        td{
+            vertical-align: baseline;
+        }
+        .table-bar{
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .brand a{
+            font-size: 16px;
+            font-weight: 600;
+        }
     </style>
 
     <!-- Title -->
@@ -70,9 +103,11 @@
     <header class="p-3 mb-3 border-bottom">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none fs-4">
-              Kurir<span class="fs-4" style="color:#75CB79;">.ku</span>
-            </a>
+              <div class="brand">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none fs-4">
+                    Warehouse<span class="fs-4" style="color:#75CB79;">.ku</span>
+                  </a>
+              </div>
 
             <ul class="nav col-12 col-lg-auto ms-lg-auto mb-2 justify-content-center mb-md-0">
               <li><a href="/" class="nav-link px-2 link-secondary">Dashboard</a></li>
@@ -127,7 +162,7 @@
 
       <!-- Content -->
       <div class="content">
-       <div class="container-fluid">
+       <div class="container">
         {% block content %}{% endblock %}
        </div>
       </div>

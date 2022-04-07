@@ -47,3 +47,14 @@ class Database():
             #parameter_text = (wkt1, data, text_query)
         result = data
         return status, result
+    
+    def selectdata(self):
+        text_query = "select * from public.tb_product"
+        self._curs.execute(text_query)
+        self._conn.commit()
+        cursor = self._curs
+        return cursor
+    
+    def countData(self):
+        text_query = "select sum(qty) as total_qty from tb_product where category='Aksesories'"
+        self._curs.execute(text_query)

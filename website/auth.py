@@ -1,7 +1,9 @@
+from multiprocessing.sharedctypes import Value
 from flask import Blueprint, render_template, request, flash
 
-auth = Blueprint('auth', __name__)
+from connectdb import Database
 
+auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
